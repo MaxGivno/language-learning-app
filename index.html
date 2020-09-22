@@ -15,22 +15,7 @@
             <img src="img/flags/am_flag.png" srcset="img/flags/am_flag@2x.png 2x" alt="USA Flag">
         </a>
     </header>
-    <div class="lng-menu">
-        <ul>
-            <li id="usa" class="lng-menu-item selected">
-                <img src="img/flags/am_flag.png" srcset="img/flags/am_flag@2x.png 2x" alt="USA Flag">
-            </li>
-            <li id="ger" class="lng-menu-item">
-                <img src="img/flags/ger_flag.png" srcset="img/flags/ger_flag@2x.png 2x" alt="Germany Flag">
-            </li>
-            <li id="fr" class="lng-menu-item">
-                <img src="img/flags/fr_flag.png" srcset="img/flags/fr_flag@2x.png 2x" alt="France Flag">
-            </li>
-            <li id="ukr" class="lng-menu-item">
-                <img src="img/flags/ukr_flag.png" srcset="img/flags/ukr_flag@2x.png 2x" alt="Ukraine Flag">
-            </li>
-        </ul>
-    </div>
+
     <main id="content">
         <div id="usa-content" class="content-grid show">
             <div class="content-item-top">
@@ -57,11 +42,33 @@
                 </a>
             </div>
         </div>
+        <div id="ger-content" class="content-grid">
+            <h3 class="info-text">Unavailable in Free version</h3>
+        </div>
+        <div id="fr-content" class="content-grid">
+            <h3 class="info-text">Unavailable in Free version</h3>
+        </div>
         <div id="ukr-content" class="content-grid">
             <div class="content-item-top">
                 <a href="#" id="item1">
-                    <div class="content-item item-1">
-                        <img src="img/donut.png" srcset="img/donut@2x.png 2x" alt="Basics 1 Section">
+                    <div id="clickable" class="content-item item-1">
+                        <div class="card-top">
+                            <a href="#" class='close-btn'>
+                                <img src="img/close.png" srcset="img/close@2x.png" alt="Close">
+                            </a>
+                            <div id="progress-bar">
+                                <div class="progress-back">
+                                    <div class="progress-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <img id="donut" src="img/donut.png" srcset="img/donut@2x.png 2x" alt="Basics 1 Section">
+                        <p class="card-text">What do you call this in Ukrainian?</p>
+                        <div class="choices">
+                            <a href="#" class="choices-btn">Bublik</a>
+                            <a href="#" class="choices-btn">Donut</a>
+                        </div>
+                        <img id="mic" src="img/mic.png" srcset="img/mic@2x.png" alt="Microphone">
                     </div>
                     <h3>Food</h3>
                 </a>
@@ -83,6 +90,24 @@
             </div>
         </div>
     </main>
+
+    <div class="lng-menu">
+        <ul>
+            <li id="usa" class="lng-menu-item selected">
+                <img src="img/flags/am_flag.png" srcset="img/flags/am_flag@2x.png 2x" alt="USA Flag">
+            </li>
+            <li id="ger" class="lng-menu-item">
+                <img src="img/flags/ger_flag.png" srcset="img/flags/ger_flag@2x.png 2x" alt="Germany Flag">
+            </li>
+            <li id="fr" class="lng-menu-item">
+                <img src="img/flags/fr_flag.png" srcset="img/flags/fr_flag@2x.png 2x" alt="France Flag">
+            </li>
+            <li id="ukr" class="lng-menu-item">
+                <img src="img/flags/ukr_flag.png" srcset="img/flags/ukr_flag@2x.png 2x" alt="Ukraine Flag">
+            </li>
+        </ul>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 
