@@ -1,0 +1,214 @@
+:root {
+  --bg-color: #f5f5f5;
+  --section-1-color: #7ab745;
+  --section-2-color: #a572ea;
+  --section-3-color: #f08383;
+
+  --food-color: #71bf71;
+  --places-color: #83a8e5;
+  --people-color: #f49fb0;
+
+  --text-color: #707070;
+  --shadow-color: rgba(0, 0, 0, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+body {
+  font-family: sofia-pro-soft, sans-serif;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border: 6px solid #fff;
+  height: 100vh;
+}
+
+/* Header */
+header.header {
+  position: fixed;
+  width: 100%;
+  height: 110px;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 15px 33px;
+  box-shadow: 0 3px 6px var(--shadow-color);
+}
+
+/* Language Indicator Button */
+.lng-select.usa img {
+  content: url(../img/flags/am_flag.png);
+}
+.lng-select.ger img {
+  content: url(../img/flags/ger_flag.png);
+}
+.lng-select.fr img {
+  content: url(../img/flags/fr_flag.png);
+}
+.lng-select.ukr img {
+  content: url(../img/flags/ukr_flag.png);
+}
+
+/* Language Select Menu */
+.lng-menu {
+  width: 100%;
+  height: 110px;
+  padding: 0 23px;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(0);
+  transition: 0.2s transform cubic-bezier(0.18, 0.89, 0.45, 1.36);
+  padding-top: 30px;
+  z-index: 199;
+}
+
+.lng-menu.show {
+  transform: translate(0, 80px);
+}
+
+.lng-menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  height: 80px;
+}
+
+.lng-menu-item {
+  cursor: pointer;
+}
+
+.lng-menu-item.selected {
+  cursor: no-drop;
+  opacity: 0.5;
+}
+
+/* Content */
+#content {
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+.content-grid {
+  position: absolute;
+  width: 100%;
+  height: 184px;
+  top: 50px;
+  left: 0;
+  padding: 0 2rem;
+  transform: translate(0, -100vh);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s all ease-in-out;
+}
+
+.content-grid.show {
+  height: 450px;
+  transform: translate(0);
+  opacity: 1;
+}
+
+.content-grid h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 13px;
+}
+
+.content-item-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content-item {
+  width: 128px;
+  height: 128px;
+  padding: 1.2rem;
+  border: 8px solid #fff;
+  border-radius: 64px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+#usa-content .content-item.item-1 {
+  padding-top: 0.9rem;
+  background: var(--section-1-color);
+}
+
+#usa-content .content-item.item-2 {
+  background: var(--section-2-color);
+}
+
+#usa-content .content-item.item-3 {
+  background: var(--section-3-color);
+}
+
+#ukr-content .content-item.item-1 {
+  background: var(--food-color);
+}
+
+#ukr-content .content-item.item-2 {
+  background: var(--places-color);
+}
+
+#ukr-content .content-item.item-3 {
+  padding-top: 0.7rem;
+  background: var(--people-color);
+}
+
+#ukr-content .content-item.item-3 img {
+  width: 90%;
+}
+
+/* Background blur on language select menu */
+@supports (
+  (-webkit-backdrop-filter: saturate(180%) blur(20px)) or
+    (backdrop-filter: saturate(180%) blur(20px))
+) {
+  .lng-menu {
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: saturate(180%) blur(30px);
+    backdrop-filter: saturate(180%) blur(30px);
+  }
+}
+
+/* Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Language Indicator Button */
+  .lng-select img {
+    width: 64px;
+    height: 46px;
+  }
+  .lng-select.usa img {
+    content: url(../img/flags/am_flag@2x.png);
+  }
+  .lng-select.ger img {
+    content: url(../img/flags/ger_flag@2x.png);
+  }
+  .lng-select.fr img {
+    content: url(../img/flags/fr_flag@2x.png);
+  }
+  .lng-select.ukr img {
+    content: url(../img/flags/ukr_flag@2x.png);
+  }
+}
