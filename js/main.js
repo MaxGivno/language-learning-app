@@ -35,18 +35,24 @@ function switchContent(e) {
     lastSelected = this.id
 }
 
-// function expandCard(e) {
-//     console.log(this.id)
-//     this.classList.add('expanded')
-//     contentItemCard.removeEventListener('click', expandCard)
-// }
+function expandCard(e) {
+    console.log('Card clicked')
+    e.stopImmediatePropagation()
+    this.classList.add('expanded')
+    this.removeEventListener('click', expandCard)
+    closeBtn.addEventListener('click', closeCard)
+}
 
-// async function closeCard(e) {
-//     console.log(this.id)
-//     contentItemCard.classList.remove('expanded')
-// }
+function closeCard(e) {
+    console.log('Close clicked')
+    e.stopImmediatePropagation()
+    contentItemCard.classList.remove('expanded')
+    this.removeEventListener('click', closeCard)
+    if (contentItemCard.classList.contains('expanded') === false) {
+        contentItemCard.addEventListener('click', expandCard)
+    }
+}
 
 lngBtn.addEventListener('click', toggleMenu);
 lngMenuItems.forEach(item => item.addEventListener('click', switchContent))
-// contentItemCard.addEventListener('click', expandCard)
-// closeBtn.addEventListener('click', closeCard)
+contentItemCard.addEventListener('click', expandCard)

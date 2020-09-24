@@ -147,6 +147,7 @@ header.header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
   transition: 0.5s all ease-in-out;
 }
 
@@ -187,10 +188,11 @@ header.header {
   align-items: center;
   box-shadow: 0 4px 8px var(--shadow-color);
   margin: 0;
+  cursor: pointer;
 }
 
 /* Card Expanded */
-.content-item.expanded {
+/* .content-item.expanded {
   position: absolute;
   top: calc(50vw - 64px);
   left: calc(50vw - 64px);
@@ -198,6 +200,21 @@ header.header {
   height: 100%;
   z-index: 201;
   margin: calc(-50vw + 64px);
+
+  border-radius: 0;
+  border-width: 0;
+  transition: 0.5s all ease-in-out;
+} */
+
+.content-item.expanded {
+  position: relative;
+  top: -80px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 110px);
+  z-index: 201;
+  /* margin: calc(-50vw + 64px); */
+  cursor: auto;
 
   border-radius: 0;
   border-width: 0;
