@@ -76,7 +76,7 @@ header.header {
 .lng-menu {
   width: 100%;
   height: 110px;
-  padding: 0 23px;
+  padding: 0 28px;
   background: rgba(255, 255, 255, 0.5);
   transform: translate(0);
   padding-top: 30px;
@@ -156,6 +156,7 @@ header.header {
   justify-content: space-between;
 }
 
+/* Card collapsed */
 .content-item {
   position: relative;
   width: 128px;
@@ -171,6 +172,7 @@ header.header {
   margin: 0;
 }
 
+/* Card Expanded */
 .content-item.expanded {
   position: absolute;
   top: calc(50vw - 64px);
