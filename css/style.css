@@ -177,6 +177,7 @@ header.header {
 /* Card collapsed */
 .content-item {
   position: relative;
+  top: 0;
   width: 128px;
   height: 128px;
   padding: 1.2rem;
@@ -189,31 +190,19 @@ header.header {
   box-shadow: 0 4px 8px var(--shadow-color);
   margin: 0;
   cursor: pointer;
+  z-index: 201;
+  transition: 0.25s all ease-in-out;
 }
 
 /* Card Expanded */
-/* .content-item.expanded {
-  position: absolute;
-  top: calc(50vw - 64px);
-  left: calc(50vw - 64px);
-  width: 100%;
-  height: 100%;
-  z-index: 201;
-  margin: calc(-50vw + 64px);
-
-  border-radius: 0;
-  border-width: 0;
-  transition: 0.5s all ease-in-out;
-} */
-
 .content-item.expanded {
   position: relative;
   top: -80px;
   left: 0;
   width: 100vw;
   height: calc(100vh - 110px);
-  z-index: 201;
-  /* margin: calc(-50vw + 64px); */
+  justify-content: flex-start;
+
   cursor: auto;
 
   border-radius: 0;
@@ -222,28 +211,37 @@ header.header {
 }
 
 .content-item img#donut {
+  margin: 0;
+  width: 85.5px;
+  height: 87.5px;
   -webkit-filter: drop-shadow(0 2px 0 rgba(35, 92, 35, 0.5));
   filter: drop-shadow(0 2px 0 rgba(35, 92, 35, 0.5));
-  transition: 0.5s all ease-in-out;
+  transition: 0.25s all ease-in-out;
 }
 
 .content-item.expanded img#donut {
+  margin: 1em 0;
   width: 216px;
   height: 211px;
   -webkit-filter: drop-shadow(0 20px 4px rgba(35, 92, 35, 0.13));
   filter: drop-shadow(0 20px 4px rgba(35, 92, 35, 0.13));
+  transition: 0.5s all ease-in-out 0.1s;
 }
 
 .content-item .card-top {
-  display: none;
-}
-
-.content-item.expanded .card-top {
-  width: 100%;
+  opacity: 0;
+  width: 0;
+  height: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  transition: 0.5s all ease-in-out;
+}
+
+.content-item.expanded .card-top {
+  opacity: 1;
+  height: auto;
+  width: 100%;
+  /* transition: 0.3s all ease-in-out 0.1s; */
 }
 
 .content-item .close-btn {
@@ -261,7 +259,6 @@ header.header {
   width: 1%;
   height: 14px;
   margin-left: 1.2rem;
-  transition: 0.5s all ease-in-out;
 }
 
 .content-item.expanded #progress-bar {
@@ -283,20 +280,30 @@ header.header {
 }
 
 .content-item p.card-text {
-  display: none;
+  position: relative;
+  top: -50px;
+  opacity: 0;
+  height: 0;
   font-size: 2rem;
   color: #fff;
   text-align: center;
-  transition: 0.5s scale ease-in-out;
 }
 
 .content-item.expanded p.card-text {
-  display: block;
+  top: 0;
+  margin-bottom: 1em;
+  opacity: 1;
+  height: auto;
+  transition: 0.4s all ease-in-out 0.2s;
 }
 
 .choices {
-  width: 100%;
-  display: none;
+  position: relative;
+  top: -100px;
+  opacity: 0;
+  width: 50%;
+  height: 0;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -307,22 +314,31 @@ header.header {
   font-weight: 700;
   color: var(--food-color);
   background: #fff;
-  padding: 0.7rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 19px;
 }
 
 .content-item.expanded .choices {
-  display: flex;
+  top: 0;
+  margin: auto 0;
+  height: auto;
+  width: 100%;
+  opacity: 1;
+  transition: 0.4s all ease-in-out 0.2s;
 }
 
 .content-item img#mic {
-  display: none;
-}
-
-.content-item.expanded img#mic {
   display: block;
   width: 73px;
   height: 124px;
+  opacity: 0;
+  height: 0;
+}
+
+.content-item.expanded img#mic {
+  opacity: 1;
+  height: auto;
+  transition: 0.5s all ease-in-out 0.3s;
 }
 
 #usa-content .content-item.item-1 {
