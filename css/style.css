@@ -196,7 +196,7 @@ header.header {
 /* Card collapsed */
 .content-item {
   position: relative;
-  top: 0px;
+  /* top: 0px; */
   left: 0;
   width: 128px;
   height: 128px;
@@ -249,7 +249,7 @@ header.header {
   height: 211px;
   -webkit-filter: drop-shadow(0 20px 4px rgba(35, 92, 35, 0.13));
   filter: drop-shadow(0 20px 4px rgba(35, 92, 35, 0.13));
-  transition: 0.3s all ease-in-out 0.1s;
+  transition: 0.3s all ease-in-out;
 }
 
 .content-item .card-top {
