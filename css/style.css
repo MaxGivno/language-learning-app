@@ -219,7 +219,7 @@ header.header {
 
 /* Card Expanded */
 .content-item.expanded {
-  top: -80px;
+  top: 100px;
   width: calc(100vw - 12px);
   height: calc(100vh - 12px);
   border-radius: 32px;
