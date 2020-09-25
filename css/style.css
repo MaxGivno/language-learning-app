@@ -136,12 +136,14 @@ header.header {
   top: 110px;
   /* height: 100%; */
   z-index: 0;
+  transition: 0.25s all ease-in-out;
 }
 
 #content.expanded {
   top: 0;
   height: 100vh;
   z-index: 999;
+  transition: 0.3s all ease-in-out;
 }
 
 .content-grid {
@@ -158,13 +160,14 @@ header.header {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: 0.5s all ease-in-out;
+  transition: 0.25s all ease-in-out;
 }
 
 .content-grid.show {
   height: calc(100vh - 120px);
   transform: translate(0);
   opacity: 1;
+  transition: 0.3s all ease-in-out;
 }
 
 .content-grid.show.expanded {
@@ -196,7 +199,7 @@ header.header {
 /* Card collapsed */
 .content-item {
   position: relative;
-  /* top: 0px; */
+  top: 0px;
   left: 0;
   width: 128px;
   height: 128px;
@@ -257,15 +260,14 @@ header.header {
   width: 0;
   height: 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
 .content-item.expanded .card-top {
   opacity: 1;
-  height: auto;
+  height: 32px;
   width: 100%;
-  /* transition: 0.3s all ease-in-out 0.1s; */
+  transition: 0.3s all ease-in-out 0.1s;
 }
 
 .content-item .close-btn {
