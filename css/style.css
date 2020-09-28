@@ -15,8 +15,12 @@
 
   /* Transition Curves */
   --nice-spring: cubic-bezier(0.86, -0.85, 0.18, 1.68);
-  --snap: cubic-bezier(0.01, 0.45, 0.3, 1.55);
+  /* --snap: cubic-bezier(0.01, 0.45, 0.3, 1.55); */
+  --snap: cubic-bezier(0.09, 0.68, 0.27, 1.43);
   --wind-up: cubic-bezier(0.58, -0.32, 1, 0.6);
+
+  --open-transition: 0.3s all ease-in-out;
+  --close-transition: 0.25s all ease-in-out;
 }
 
 * {
@@ -136,14 +140,14 @@ header.header {
   top: 110px;
   /* height: 100%; */
   z-index: 0;
-  transition: 0.25s all ease-in-out;
+  transition: var(--close-transition);
 }
 
 #content.expanded {
   top: 0;
   height: 100vh;
   z-index: 999;
-  transition: 0.3s all ease-in-out;
+  transition: var(--open-transition);
 }
 
 .content-grid {
@@ -160,18 +164,19 @@ header.header {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: 0.25s all ease-in-out;
+  transition: var(--close-transition);
 }
 
 .content-grid.show {
   height: calc(100vh - 120px);
   transform: translate(0);
   opacity: 1;
-  transition: 0.3s all ease-in-out;
+  transition: var(--open-transition);
 }
 
 .content-grid.show.expanded {
-  height: 100vh;
+  padding: 0 2rem;
+  height: auto;
   width: 200%;
   left: -50%;
 }
@@ -217,12 +222,12 @@ header.header {
   cursor: pointer;
   z-index: 5;
 
-  transition: 0.25s all ease-in-out;
+  transition: var(--close-transition);
 }
 
 /* Card Expanded */
 .content-item.expanded {
-  top: 100px;
+  /* top: 100px; */
   width: calc(100vw - 12px);
   height: calc(100vh - 12px);
   border-radius: 32px;
@@ -234,7 +239,8 @@ header.header {
   cursor: auto;
   z-index: 1000;
 
-  transition: 0.3s all ease-in-out;
+  transition: var(--open-transition);
+  /* transition: 0.3s all var(--snap); */
 }
 
 .content-item img#donut {
@@ -243,7 +249,7 @@ header.header {
   height: 87.5px;
   -webkit-filter: drop-shadow(0 2px 0 rgba(35, 92, 35, 0.5));
   filter: drop-shadow(0 2px 0 rgba(35, 92, 35, 0.5));
-  transition: 0.25s all ease-in-out;
+  transition: var(--close-transition);
 }
 
 .content-item.expanded img#donut {
@@ -252,7 +258,7 @@ header.header {
   height: 211px;
   -webkit-filter: drop-shadow(0 20px 4px rgba(35, 92, 35, 0.13));
   filter: drop-shadow(0 20px 4px rgba(35, 92, 35, 0.13));
-  transition: 0.3s all ease-in-out;
+  transition: var(--open-transition);
 }
 
 .content-item .card-top {
@@ -267,7 +273,7 @@ header.header {
   opacity: 1;
   height: 32px;
   width: 100%;
-  transition: 0.3s all ease-in-out 0.1s;
+  transition: var(--open-transition) 0.1s;
 }
 
 .content-item .close-btn {
@@ -326,7 +332,7 @@ header.header {
   margin: auto 0;
   opacity: 1;
   height: auto;
-  transition: 0.3s all ease-in-out 0.2s;
+  transition: var(--open-transition) 0.2s;
 }
 
 .content-item .choices {
@@ -349,7 +355,7 @@ header.header {
   /* width: 100%; */
   margin: 3rem 0;
   opacity: 1;
-  transition: 0.3s all ease-in-out 0.2s;
+  transition: var(--open-transition) 0.2s;
 }
 
 .choices .choices-btn {
